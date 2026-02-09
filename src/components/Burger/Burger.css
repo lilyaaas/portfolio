@@ -21,6 +21,15 @@
   color: #0a0a0a;
 }
 
+body.light-mode .burger-btn {
+  background: rgb(231, 230, 230);
+  color: #000000;
+}
+
+body.light-mode .burger-btn:hover {
+  background: #d083a1ca;
+}
+
 /* Overlay */
 .menu-overlay {
   position: fixed;
@@ -35,6 +44,10 @@
   opacity: 0;
   visibility: hidden;
   transition: all 0.4s ease-in-out;
+}
+
+body.light-mode .menu-overlay {
+  background: rgb(231, 230, 230);
 }
 
 .menu-overlay.open {
@@ -55,13 +68,16 @@
   padding: 10px 15px;
   cursor: pointer;
   letter-spacing: 0.5px;
-  /* transition: background-color 0.2s; */
   width: 100%;
   text-decoration: none;
   position: relative;
   transform: translateY(20px);
   opacity: 0;
   transition: 0.3s ease;
+}
+
+body.light-mode .menu-link {
+  color: #c374b8;
 }
 
 .menu-overlay.open .menu-link {
@@ -73,13 +89,6 @@
   background-color: #ffffff10;
 }
 
-/* RTL Support */
-[dir="rtl"] .burger-btn {
-  right: auto;
-  left: 1rem;
-}
-
-[dir="rtl"] .menu-overlay {
-  right: auto;
-  left: 1rem;
+body.light-mode .menu-link:hover {
+  background-color: #0000001c;
 }

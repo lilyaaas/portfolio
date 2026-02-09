@@ -24,6 +24,16 @@
   color: #0a0a0a;
 }
 
+
+body.light-mode .language-switcher-btn {
+  background: rgb(231, 230, 230);
+  color: #000000;
+}
+
+body.light-mode .language-switcher-btn:hover {
+  background: #d083a1ca;
+}
+
 /* Dropdown */
 .language-dropdown {
   position: fixed;
@@ -37,7 +47,10 @@
   opacity: 0;
   visibility: hidden;
   transition: all 0.4s ease-in-out;
-  padding: 8px 0;
+}
+
+body.light-mode .language-dropdown {
+  background: rgb(231, 230, 230);
 }
 
 .language-dropdown.open {
@@ -73,6 +86,10 @@
   background-color: #ffffff10;
 }
 
+body.light-mode .language-option:hover {
+  background-color: #0000001c;
+}
+
 .language-flag {
   font-size: 1.2rem;
 }
@@ -81,19 +98,8 @@
   flex: 1;
 }
 
-/* RTL Support */
-[dir="rtl"] .language-switcher-container {
-  right: auto;
-  left: 4.5rem;
-}
-
-[dir="rtl"] .language-dropdown {
-  right: auto;
-  left: 4.5rem;
-}
-
-[dir="rtl"] .language-option {
-  text-align: right;
+body.light-mode .language-name {
+  color: #c374b8;
 }
 
 /* Mobile Responsive */
@@ -105,14 +111,6 @@
   .language-dropdown {
     right: 4.5rem;
     min-width: 130px;
-  }
-
-  [dir="rtl"] .language-switcher-container {
-    left: 4.5rem;
-  }
-
-  [dir="rtl"] .language-dropdown {
-    left: 4.5rem;
   }
 }
 
