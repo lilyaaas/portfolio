@@ -10,6 +10,7 @@
     "greeting": "Bonjour, je suis Ilyas",
     "home_title_line1": "Développeur",
     "home_title_line2": "Web Full Stack",
+    "home_resume": "Résumé",
     "about_title": "À propos de <highlight>moi</highlight>",
     "about_intro": "Je suis <highlight>Ilyas</highlight>, un développeur <bold>Full Stack</bold> Junior résilient et récent diplômé de l'<bold>OFPPT (DTS)</bold>, avec une solide expertise en développement backend. En tant que membre fier de <bold>1337 Coding School (42 Network)</bold>, je combine la rigueur académique avec un état d'esprit intensif de résolution de problèmes. Prouvé pour s'adapter et collaborer dans des environnements à haute pression, je suis motivé par la pensée algorithmique et une passion pour explorer les technologies de pointe pour fournir des solutions numériques impactantes.",
     "about_intro_ofppt": "OFPPT (DTS)",
