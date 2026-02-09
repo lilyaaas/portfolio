@@ -1,6 +1,7 @@
 import IconCloud from "../../components/IconCloud";
 import Sparkles from "../../components/Sparkles/Sparkles";
 import { useTranslation } from "react-i18next";
+import { Download } from 'lucide-react';
 import "./Home.css";
 
 function Home() {
@@ -25,6 +26,13 @@ function Home() {
                             <span className="stroke-text">{t('home_title_line2')}</span>
                         </h1>
                     </Sparkles>
+
+                    <div className="home-buttons">
+                        <a href="/Ilyas_Resume.pdf" className="btn-cv" target="_blanck" rel="noopener noreferrer">
+                            <Download size={20} />
+                            <span>{t('home_resume')}</span>
+                        </a>
+                    </div>
 
                     {/* Subtitle */}
                     {/* <h3 className="hero-subtitle">
