@@ -6,6 +6,7 @@ import "./Projects.css";
 import clickShopImg from "../../assets/Projects/clickshop.png";
 import portfolioImg from "../../assets/Projects/portfolio.png";
 import movieAppImg from "../../assets/Projects/movie.png";
+import laravelProjectImg from "../../assets/Projects/food-api.png";
 
 function Projects() {
   const { t } = useTranslation();
@@ -33,6 +34,14 @@ function Projects() {
       img: movieAppImg,
       tags: ["React.js", "TMDB API", "Axios", "CSS3"],
       github: "https://github.com/IlyassLho/movie-app",
+      demo: "https://ilyflicks.netlify.app/",
+    },
+    {
+      title: "QuickFood",
+      descKey: "project_laravel_desc",
+      img: laravelProjectImg,
+      tags: ["PHP", "Laravel", "MySQL", "Postman", "Sanctum"],
+      github: "https://github.com/IlyassLho/food-delivery-api",
       demo: "",
     },
   ];
