@@ -15,11 +15,16 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--bg);
   color: var(--text);
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
+  scroll-padding-top: 80px;
 }
 
 /* --- Light Mode Variables --- */
