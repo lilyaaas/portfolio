@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+import React, { useState } from 'react';
 import './App.css';
 
 // Components
@@ -17,15 +16,14 @@ import Project from './pages/Project/Projects';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const { i18n } = useTranslation();
 
-  // Handle RTL/LTR direction changes
-  useEffect(() => {
-    const currentLang = i18n.language;
-    const isRTL = currentLang === 'ar';
-    document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
-    document.documentElement.setAttribute('lang', currentLang);
-  }, [i18n.language]);
+  const getInitialTheme = () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      return savedTheme;
+    }
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  };
 
   return (
     <>
@@ -41,7 +39,7 @@ function App() {
           <Education />
           <Project />
           <Footer />
-          <Dock />
+          <Dock initialTheme={getInitialTheme()} />
         </div>
       )}
     </>
