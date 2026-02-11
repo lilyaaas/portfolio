@@ -47,7 +47,7 @@ function App() {
   return (
     <>
       {isLoading ? (
-        <Preloader onComplete={() => setIsLoading(false)} />
+        <Preloader theme={theme} onComplete={() => setIsLoading(false)} />
       ) : (
         <div className="App">
           <Burger />

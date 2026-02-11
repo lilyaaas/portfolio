@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import './Preloader.css';
 
-const Preloader = ({ onComplete }) => {
+const Preloader = ({ theme, onComplete }) => {
     useEffect(() => {
         const timer = setTimeout(() => {
             onComplete();
@@ -11,7 +11,7 @@ const Preloader = ({ onComplete }) => {
     }, [onComplete]);
 
     return (
-        <div className="loader-container">
+        <div className="loader-container" style={{backgroundColor: theme === 'dark' ? '#0a0a0a' : '#f8fafc' }}>
             <div className="modern-spinner">
                 <div className="spinner-core"></div>
             </div>
