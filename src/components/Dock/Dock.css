@@ -37,12 +37,6 @@
   cursor: pointer;
 }
 
-.dock-item:hover {
-  color: #fff;
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: scale(1.2);
-}
-
 /* Separator */
 .dock-separator {
   width: 1px;
@@ -68,11 +62,6 @@
   font-weight: 500;
 }
 
-.dock-item:hover .dock-tooltip {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* --- LIGHT MODE SUPPORT --- */
 body.light-mode .dock-bar {
   background: rgba(255, 255, 255, 0.6);
@@ -84,11 +73,34 @@ body.light-mode .dock-item {
   color: #555;
 }
 
-body.light-mode .dock-item:hover {
-  color: #000;
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
 body.light-mode .dock-separator {
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+@media (hover: hover) {
+  .dock-item:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.2);
+  }
+
+  .dock-item:hover .dock-tooltip {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  body.light-mode .dock-item:hover {
+    color: #000;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
+@media (hover : none) {
+  .dock-tooltip {
+    display: none;
+  }
+
+  .dock-item:active {
+    transform: scale(0.95);
+  }
 }
