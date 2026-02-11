@@ -1,25 +1,9 @@
-import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Github, Linkedin, Mail, Sun, Moon } from 'lucide-react';
 import './Dock.css';
 
-const Dock = ({ initialTheme }) => {
-  const [theme, setTheme] = useState(initialTheme);
+const Dock = ({ currentTheme, toggleTheme }) => {
   const { t } = useTranslation();
-
-  // Function Theme
-  useEffect(() => {
-    if (theme === 'dark') {
-      document.body.classList.remove('light-mode');
-    } else {
-      document.body.classList.add('light-mode');
-    }
-    localStorage.setItem('theme', theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
-  };
 
   const socials = [
     {
@@ -70,9 +54,9 @@ const Dock = ({ initialTheme }) => {
           className="dock-item"
           aria-label={t('dock_toggle_theme')}
         >
-          {theme === 'light' ? <Sun size={22} /> : <Moon size={22} />}
+          {currentTheme === 'light' ? <Sun size={22} /> : <Moon size={22} />}
           <span className="dock-tooltip">
-            {theme === 'light' ? t('dock_light_mode') : t('dock_dark_mode')}
+            {currentTheme === 'light' ? t('dock_light_mode') : t('dock_dark_mode')}
           </span>
         </button>
 
