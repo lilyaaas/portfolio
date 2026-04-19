@@ -31,6 +31,7 @@
     "project_clickshop_desc": "Une plateforme e-commerce spécialisée en paiement à la livraison (COD) construite pour le marché marocain. Elle dispose d'une architecture sans serveur utilisant Google Sheets pour la gestion des commandes en temps réel et intègre des événements Facebook Pixel avancés pour l'optimisation publicitaire.",
     "project_portfolio_desc": "Mon site portfolio professionnel personnel pour présenter mes compétences, mon expérience et mes projets. Conçu avec une interface utilisateur propre et réactive utilisant les dernières technologies web.",
     "project_movie_desc": "Une application interactive de découverte de films qui permet aux utilisateurs de rechercher des films, voir les détails et les notes en utilisant l'API TMDB.",
+    "project_devishub_desc": "Une plateforme SaaS native cloud conçue pour numériser et centraliser la gestion des devis, produits et clients pour les PME. Construite sur une architecture monorepo 'API-first' avec une stricte isolation des données multi-locataires.",
     "project_btn_code": "Code",
     "project_btn_demo": "Démo",
     "footer_contact": "Contact",

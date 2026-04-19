@@ -32,6 +32,7 @@
     "project_portfolio_desc": "My personal professional portfolio website to showcase my skills, experience, and projects. Designed with a clean, responsive UI using the latest web technologies.",
     "project_movie_desc": "An interactive movie discovery application that allows users to search for movies, view details, and ratings using the TMDB API.",
     "project_laravel_desc": "A robust RESTful API for a multi-restaurant delivery system. Features include authentication with Sanctum, order management, restaurant geolocation handling, and role-based access control.",
+    "project_devishub_desc": "A cloud-native SaaS platform designed to digitalize and centralize quote, product, and client management for SMEs. Built with a strict API-first monorepo architecture featuring robust multi-tenancy data isolation.",
     "project_btn_code": "Code",
     "project_btn_demo": "Demo",
     "footer_contact": "Contact",

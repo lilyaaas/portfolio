@@ -7,6 +7,7 @@ import clickShopImg from "../../assets/Projects/clickshop.png";
 import portfolioImg from "../../assets/Projects/portfolio.png";
 import movieAppImg from "../../assets/Projects/movie.png";
 import laravelProjectImg from "../../assets/Projects/food-api.png";
+import devisHubImg from "../../assets/Projects/devis-hub.png";
 
 function Projects() {
   const { t } = useTranslation();
@@ -44,6 +45,14 @@ function Projects() {
       github: "https://github.com/IlyassLho/food-delivery-api",
       demo: "",
     },
+    {
+      title: "DevisHub",
+      descKey: "project_devishub_desc",
+      img: devisHubImg,
+      tags: ["React 18", "Laravel 12", "MySQL", "Tailwind CSS 3", "Laravel Sanctum", "Axios"], 
+      github: "",
+      demo: "https://devishub.com/",
+    },
   ];
 
   return (
@@ -65,9 +74,11 @@ function Projects() {
               <div className="project-img-wrapper">
                 <img src={project.img} alt={project.title} className="project-img" />
                 <div className="project-overlay">
-                  <a href={project.github} target="_blank" rel="noreferrer" className="btn-overlay">
-                    <Github size={20} /> {t('project_btn_code')}
-                  </a>
+                  {project.github && (
+                    <a href={project.github} target="_blank" rel="noreferrer" className="btn-overlay">
+                      <Github size={20} /> {t('project_btn_code')}
+                    </a>
+                  )}
                   {project.demo && (
                     <a href={project.demo} target="_blank" rel="noreferrer" className="btn-overlay">
                       <ExternalLink size={20} /> {t('project_btn_demo')}
@@ -91,9 +102,11 @@ function Projects() {
 
                 {/* (Mobile mostly) */}
                 <div className="project-buttons">
-                  <a href={project.github} target="_blank" rel="noreferrer" className="btn-github">
-                    <Github size={18} /> {t('project_btn_code')}
-                  </a>
+                  {project.github && (
+                    <a href={project.github} target="_blank" rel="noreferrer" className="btn-github">
+                      <Github size={18} /> {t('project_btn_code')}
+                    </a>
+                  )}
                   {project.demo && (
                     <a href={project.demo} target="_blank" rel="noreferrer" className="btn-demo">
                       <ExternalLink size={18} /> {t('project_btn_demo')}
