@@ -1,6 +1,21 @@
-import React from "react";
 import { Cloud, renderSimpleIcon } from "react-icon-cloud";
-import { siReact, siJavascript, siNodedotjs, siHtml5, siGit, siGithub, siPostman, siMongodb, siPython, siC, siPhp, siLaravel, siBootstrap, siMysql } from 'simple-icons';
+import {
+  siReact,
+  siJavascript,
+  siNodedotjs,
+  siHtml5,
+  siGit,
+  siGithub,
+  siPostman,
+  siMongodb,
+  siPython,
+  siC,
+  siPhp,
+  siLaravel,
+  siBootstrap,
+  siMysql,
+  siTailwindcss,
+} from "simple-icons";
 
 const cloudProps = {
   containerProps: {
@@ -48,7 +63,23 @@ const renderCustomIcon = (icon, theme) => {
   });
 };
 
-const icons = [siReact, siJavascript, siNodedotjs, siHtml5, siGit, siGithub, siPostman, siMongodb, siPython, siC, siPhp, siLaravel, siBootstrap, siMysql];
+const icons = [
+  siReact,
+  siJavascript,
+  siNodedotjs,
+  siTailwindcss,
+  siHtml5,
+  siGit,
+  siGithub,
+  siPostman,
+  siMongodb,
+  siPython,
+  siC,
+  siPhp,
+  siLaravel,
+  siBootstrap,
+  siMysql,
+];
 
 export default function IconCloud() {
   return (
