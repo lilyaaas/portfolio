@@ -15,6 +15,8 @@ import {
   siBootstrap,
   siMysql,
   siTailwindcss,
+  siCss,
+  siUbuntu,
 } from "simple-icons";
 
 const cloudProps = {
@@ -79,6 +81,8 @@ const icons = [
   siLaravel,
   siBootstrap,
   siMysql,
+  siCss,
+  siUbuntu,
 ];
 
 export default function IconCloud() {
