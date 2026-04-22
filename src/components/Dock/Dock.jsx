@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Phone } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const Dock = () => {
@@ -21,11 +21,17 @@ const Dock = () => {
       label: "Email",
       url: "mailto:ilyasslhouari@gmail.com",
     },
+    {
+      id: "phone",
+      icon: <Phone size={20} />,
+      label: "Call Me",
+      url: "tel:+212620611239",
+    },
   ];
 
   return (
     <div className="fixed bottom-3 md:bottom-5 h-12 left-1/2 -translate-x-1/2 z-1000 flex justify-center">
-      <div className="flex pl-1 pr-2 items-center justify-center gap-2 bg-glass-light dark:bg-glass rounded-2xl transition-all duration-300 border border-transparent hover:border-darkBg/10 dark:hover:border-white/8">
+      <div className="flex pl-1 pr-2 items-center justify-center gap-2 bg-glass-light bg-glass rounded-2xl transition-all duration-300 border border-transparent hover:border-white/8">
         {/* Social Icons */}
         {socials.map((item) => (
           <a
@@ -33,18 +39,18 @@ const Dock = () => {
             href={item.url}
             target="_blank"
             rel="noreferrer"
-            className="group relative flex items-center justify-center w-10 h-10 text-darkBg/40 dark:text-white/30 transition-all duration-300 rounded-full hover:text-primary hover:bg-darkBg/4 dark:hover:bg-white/4 hover:scale-110 focus:outline-none active:scale-95"
+            className="group relative flex items-center justify-center w-10 h-10 text-white/30 transition-all duration-300 rounded-full hover:text-primary hover:bg-white/4 hover:scale-110 focus:outline-none active:scale-95"
             aria-label={item.label}
           >
             {item.icon}
-            <span className="absolute -top-10 px-1 py-1 bg-lightBg/95 dark:bg-darkBg/90 backdrop-blur-md text-darkBg/80 dark:text-white/80 rounded-lg text-[13px] font-poppins uppercase tracking-wider opacity-0 pointer-events-none translate-y-2 transition-all duration-200 whitespace-nowrap group-hover:opacity-100 group-hover:translate-y-0 hidden md:block border border-darkBg/10 dark:border-white/6">
+            <span className="absolute -top-10 px-2 py-1 bg-darkBg/90 backdrop-blur-md text-white/80 rounded-lg text-[13px] font-poppins uppercase tracking-wider opacity-0 pointer-events-none translate-y-2 transition-all duration-200 whitespace-nowrap group-hover:opacity-100 group-hover:translate-y-0 hidden md:block border border-white/6">
               {item.label}
             </span>
           </a>
         ))}
 
         {/* Separator */}
-        <div className="w-px h-5 bg-darkBg/10 dark:bg-white/8 mx-1" />
+        <div className="w-px h-5 bg-white/8 mx-1" />
 
         {/* Language Switcher */}
         <div className="flex items-center justify-center">
