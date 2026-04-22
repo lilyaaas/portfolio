@@ -10,7 +10,6 @@ const Header = () => {
   const links = [
     { key: "nav_home", href: "#home" },
     { key: "nav_about", href: "#about" },
-    { key: "nav_skills", href: "#skills" },
     { key: "nav_projects", href: "#projects" },
     { key: "nav_certificate", href: "#certificate" },
     { key: "nav_contact", href: "#contact" },
