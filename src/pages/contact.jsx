@@ -73,28 +73,28 @@ function Contact() {
           {/* Contact Details List */}
           <div className="space-y-5 pt-4 lg:w-full">
             <div className="flex items-center gap-4 group">
-              <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-primary transition-all duration-300 group-hover:bg-primary/10 group-hover:border-primary/30">
+              <div className="w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-primary transition-all duration-300 group-hover:bg-primary/10 group-hover:border-primary/30">
                 <MapPin size={20} />
               </div>
               <div>
-                <p className="font-poppins text-sm text-white/40 uppercase tracking-widest">
+                <p className="font-josefin text-xs md:text-sm text-white/40 uppercase tracking-widest">
                   {t("contact_location")}
                 </p>
-                <p className="font-poppins text-white/80 text-lg">
+                <p className="font-poppins text-white/80 text-base">
                   {t("contact_location_text")}
                 </p>
               </div>
             </div>
 
             <div className="flex items-center gap-4 group">
-              <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-primary transition-all duration-300 group-hover:bg-primary/10 group-hover:border-primary/30">
+              <div className="w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-primary transition-all duration-300 group-hover:bg-primary/10 group-hover:border-primary/30">
                 <Terminal size={20} />
               </div>
               <div>
-                <p className="font-poppins text-sm text-white/40 uppercase tracking-widest">
+                <p className="font-josefin text-xs md:text-sm text-white/40 uppercase tracking-widest">
                   {t("contact_status")}
                 </p>
-                <p className="font-poppins text-white/80 text-lg">
+                <p className="font-poppins text-white/80 text-base">
                   {t("contact_status_text")}
                 </p>
               </div>
