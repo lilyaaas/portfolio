@@ -1,64 +1,35 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
+import { useState } from "react";
 
 // Components
-import Preloader from './components/loading/Preloader';
-import Dock from './components/Dock/Dock';
-import Burger from './components/Burger/Burger';
-import Footer from './components/Footer/Footer';
-import LanguageSwitcher from './components/LanguageSwitcher/LanguageSwitcher';
+import Preloader from "./components/loading/Preloader";
+import ParticleField from "./components/ui/ParticleField";
+import Dock from "./components/Dock/Dock";
+import Header from "./components/header/Header";
+
 // Pages
-import Home from './pages/Home/Home';
-import About from './pages/About/About';
-import Skills from './pages/Skills/Skills';
-import Education from './pages/Education/Education';
-import Project from './pages/Project/Projects';
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Project from "./pages/Projects";
+import Contact from "./pages/contact";
+import Footer from "./pages/Footer";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
-  const [theme, setTheme] = useState((window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
-
-  // Function Theme
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
-    const handleChange = (e) => {
-      const newTheme = e.matches ? 'dark' : 'light';
-      setTheme(newTheme);
-    };
-
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, []);
-
-  useEffect(() => {
-    if (theme === 'dark') {
-      document.body.classList.remove('light-mode');
-    } else {
-      document.body.classList.add('light-mode');
-    }
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
-  };
-
   return (
     <>
       {isLoading ? (
-        <Preloader theme={theme} onComplete={() => setIsLoading(false)} />
+        <Preloader onComplete={() => setIsLoading(false)} />
       ) : (
-        <div className="App">
-          <Burger />
-          <LanguageSwitcher />
+        <div className="relative w-full bg-darkBg transition-colors duration-500">
+          <Header />
+          <ParticleField />
           <Home />
           <About />
-          <Skills />
-          <Education />
           <Project />
+          <Contact />
+          <Dock />
           <Footer />
-          <Dock currentTheme={theme} toggleTheme={toggleTheme} />
         </div>
       )}
     </>
