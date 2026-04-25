@@ -1,9 +1,38 @@
+import { useState, useRef } from "react";
 import { useTranslation, Trans } from "react-i18next";
-import { Send, User, Mail } from "lucide-react";
+import { Send, User, Mail, Loader2 } from "lucide-react";
+import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
 import Sparkles from "../components/ui/Sparkles";
 
 function Contact() {
   const { t } = useTranslation();
+  const form = useRef();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      )
+      .then(
+        () => {
+          toast.success("Message sent successfully!");
+          form.current.reset();
+          setIsSubmitting(false);
+        },
+        () => {
+          toast.error("Failed to send message. Please try again.");
+          setIsSubmitting(false);
+        },
+      );
+  };
 
   return (
     <section
@@ -34,8 +63,9 @@ function Contact() {
           <div className="relative w-full max-w-xl bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 shadow-[0_0_20px_rgba(0,0,0,0.3)] backdrop-blur-md z-10 transition-all duration-500 hover:border-white/20 group/card hover:shadow-[0_0_20px_rgba(208,131,160,0.5)]">
             <div className="absolute inset-0 bg-linear-to-br from-white/5 to-transparent rounded-3xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
             <form
+              ref={form}
               className="space-y-7 relative"
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={sendEmail}
             >
               {/* Name Field */}
               <div className="space-y-2 text-left group">
@@ -52,6 +82,8 @@ function Contact() {
                   <input
                     type="text"
                     id="name"
+                    name="user_name"
+                    required
                     placeholder={t("contact_name")}
                     className="w-full bg-black/20 border border-white/10 text-white rounded-xl pl-12 pr-4 py-4 focus:outline-none focus:border-primary focus:ring-1 focus:ring-white/40 focus:bg-black/40 focus:shadow-[0_0_20px_rgba(255,255,255,0.05)] transition-all duration-300 placeholder:text-white/20 font-poppins"
                   />
@@ -73,6 +105,8 @@ function Contact() {
                   <input
                     type="email"
                     id="email"
+                    name="user_email"
+                    required
                     placeholder={t("contact_email")}
                     className="w-full bg-black/20 border border-white/10 text-white rounded-xl pl-12 pr-4 py-4 focus:outline-none focus:border-primary focus:ring-1 focus:ring-white/40 focus:bg-black/40 focus:shadow-[0_0_20px_rgba(255,255,255,0.05)] transition-all duration-300 placeholder:text-white/20 font-poppins"
                   />
@@ -90,6 +124,8 @@ function Contact() {
                 <div className="relative">
                   <textarea
                     id="message"
+                    name="message"
+                    required
                     rows="4"
                     className="w-full bg-black/20 border border-white/10 text-white rounded-xl px-4 py-4 focus:outline-none focus:border-primary focus:ring-1 focus:ring-white/40 focus:bg-black/40 focus:shadow-[0_0_20px_rgba(255,255,255,0.05)] transition-all duration-300 resize-none placeholder:text-white/20 font-poppins"
                   ></textarea>
@@ -100,11 +136,16 @@ function Contact() {
               <div className="pt-4">
                 <button
                   type="submit"
-                  className="group relative inline-flex items-center justify-center w-full md:w-auto gap-3 text-white font-josefin font-bold text-sm tracking-widest uppercase px-10 py-4 rounded-full bg-linear-to-r from-primary to-secondary transition-all duration-300 hover:scale-[1.02] active:scale-95 cursor-pointer overflow-hidden border border-white/20"
+                  disabled={isSubmitting}
+                  className="group relative inline-flex items-center justify-center w-full md:w-auto gap-3 text-white font-josefin font-bold text-sm tracking-widest uppercase px-10 py-4 rounded-full bg-linear-to-r from-primary to-secondary transition-all duration-300 hover:scale-[1.02] active:scale-95 cursor-pointer overflow-hidden border border-white/20 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   <span className="relative z-10 flex gap-2">
-                    <Send className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    {t("contact_send")}
+                    {isSubmitting ? (
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                    ) : (
+                      <Send className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    )}
+                    {isSubmitting ? t("contact_sending") : t("contact_send")}
                   </span>
                 </button>
               </div>
