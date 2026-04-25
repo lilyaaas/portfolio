@@ -5,12 +5,12 @@ function About() {
   return (
     <section
       id="about"
-      className="relative w-full py-28 overflow-hidden pt-24 px-6 pb-10 2xl:px-44 lg:px-24"
+      className="relative w-full min-h-screen flex items-center justify-center py-28 overflow-hidden pt-24 px-6 pb-10 2xl:px-44 lg:px-24"
     >
       {/* Ambient orbs for depth */}
       <div className="absolute top-20 right-0 w-87.5 h-87.5 bg-secondary/8 rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="flex flex-col lg:flex-row items-center justify-between gap-14 lg:gap-24 w-full min-h-112.5">
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-14 lg:gap-24 w-full h-full">
         {/* LEFT SIDE: Image */}
         <div className="flex justify-center cursor-pointer xl:pl-24">
           <Tilt
