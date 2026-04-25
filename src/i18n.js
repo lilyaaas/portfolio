@@ -5,8 +5,6 @@ import LanguageDetector from "i18next-browser-languagedetector";
 // Import translations
 import en from "./locales/en.json";
 import fr from "./locales/fr.json";
-import de from "./locales/de.json";
-import ru from "./locales/ru.json";
 
 // Initialize i18n
 i18n
@@ -16,8 +14,6 @@ i18n
     resources: {
       en: { ...en },
       fr: { ...fr },
-      de: { ...de },
-      ru: { ...ru },
     },
     fallbackLng: "en",
     detection: {
