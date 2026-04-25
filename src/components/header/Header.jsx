@@ -11,7 +11,6 @@ const Header = () => {
     { key: "nav_home", href: "#home" },
     { key: "nav_about", href: "#about" },
     { key: "nav_projects", href: "#projects" },
-    { key: "nav_certificate", href: "#certificate" },
     { key: "nav_contact", href: "#contact" },
   ];
 
@@ -35,7 +34,7 @@ const Header = () => {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 py-3 transition-all duration-500 bg-darkBg/80 backdrop-blur-md border-b border-white/5">
-      <div className="flex items-center justify-between px-6 lg:px-20">
+      <div className="flex items-center justify-between px-6 2xl:px-44 lg:px-24">
         {/* Logo Section */}
         <div className="z-50 font-bold tracking-wide cursor-pointer">
           <span className="text-2xl font-josefin text-gradient">ILYAS.</span>
