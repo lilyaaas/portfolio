@@ -1,7 +1,9 @@
-import { Trans } from "react-i18next";
+import { useTranslation, Trans } from "react-i18next";
 import Tilt from "react-parallax-tilt";
 
 function About() {
+  const { t } = useTranslation();
+
   return (
     <section
       id="about"
@@ -57,6 +59,8 @@ function About() {
           </p>
         </div>
       </div>
+      {/* ignore it */}
+      {t("")}
     </section>
   );
 }
