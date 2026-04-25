@@ -26,7 +26,7 @@ function Home() {
 
           {/* Greeting */}
           <h2 className="text-xl md:text-3xl font-josefin font-light text-white/60 tracking-wide">
-            {t("greeting")}{" "}
+            {t("home_greeting")}{" "}
             <span className="inline-block origin-[70%_70%] animate-wave">
               👋🏻
             </span>
@@ -65,7 +65,7 @@ function Home() {
               <span className="absolute inset-0 bg-[linear-gradient(110deg,transparent_25%,rgba(255,255,255,0.12)_50%,transparent_75%)] bg-size-[200%_100%] animate-[shimmer_3s_linear_infinite]" />
               <Send size={20} className="relative z-10 animate-bounce" />
               <span className="relative z-10 tracking-wider uppercase">
-                {t("home_getintouch")}
+                {t("home_get_in_touch")}
               </span>
             </a>
           </div>
